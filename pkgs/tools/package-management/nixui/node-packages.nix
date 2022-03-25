@@ -49,13 +49,13 @@ let
         sha1 = "309f10ba29f2002f74a92fb870b8a53ba2131593";
       };
     };
-    "underscore-1.12.0" = {
+    "underscore-1.13.2" = {
       name = "underscore";
       packageName = "underscore";
-      version = "1.12.0";
+      version = "1.13.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/underscore/-/underscore-1.12.0.tgz";
-        sha512 = "21rQzss/XPMjolTiIezSu3JAjgagXKROtNrYFEOWK109qY1Uv2tVjPTZ1ci2HgvQDA16gHYSthQIJfB+XId/rQ==";
+        url = "https://registry.npmjs.org/underscore/-/underscore-1.13.2.tgz";
+        sha512 = "ekY1NhRzq0B08g4bGuX4wd2jZx5GnKz6mKSqFL4nqBlfyMGiG10gDFhDTMEfYmDL6Jy0FUIZp7wiRB+0BP7J2g==";
       };
     };
     "underscore-1.4.4" = {
@@ -70,12 +70,12 @@ let
   };
 in
 {
-  "nixui-git://github.com/matejc/nixui.git#0.2.1" = nodeEnv.buildNodePackage {
+  "nixui-git+https://github.com/matejc/nixui.git#0.2.1" = nodeEnv.buildNodePackage {
     name = "nixui";
     packageName = "nixui";
     version = "0.2.1";
     src = fetchgit {
-      url = "git://github.com/matejc/nixui.git";
+      url = "https://github.com/matejc/nixui.git";
       rev = "845a5f4a33f1d0c509c727c130d0792a5b450a38";
       sha256 = "2a2b1dcd9201e306242688c6c86f520ac47ef5de841ae0d7ea6ae8ff2889c3ab";
     };
@@ -93,7 +93,7 @@ in
           sources."underscore-1.4.4"
         ];
       })
-      sources."underscore-1.12.0"
+      sources."underscore-1.13.2"
     ];
     buildInputs = globalBuildInputs;
     meta = {
